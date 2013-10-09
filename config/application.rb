@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
+require 'rack-flash'
 require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
@@ -13,6 +14,7 @@ Bundler.require(:default, Rails.env)
 
 module QuizApp
   class Application < Rails::Application
+    # use Rack::Flash
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

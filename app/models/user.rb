@@ -5,10 +5,13 @@ class User < ActiveRecord::Base
   # users.password_hash in the database is a :string
   include BCrypt
 
-  validates_presence_of :name
+  validates_presence_of :name, message: "you must fill in all required fields"
   validates_presence_of :email
+
   validates_presence_of :password
-  validates_presence_of :password_confirmation
+  validates_confirmation_of :password
+
+  # validates :password, confirmation: true
 
   def password=(new_password)
     @password = Password.create(new_password)
@@ -20,3 +23,6 @@ class User < ActiveRecord::Base
   end
 
 end
+
+
+# 'you must fill in all required fields'

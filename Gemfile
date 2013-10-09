@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rack-flash3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -33,6 +35,7 @@ group :doc do
 end
 group :development, :test do
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'bcrypt-ruby'
