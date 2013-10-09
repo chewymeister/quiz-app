@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
+  
+
+
   def new
-    @user = User.new(params[:user])
-    @user.save
+    @user = User.new
   end
 
   def update
-    @user = User.new(params[:user].permit(:name, :email, :password, :password_confirmation))
+  end
+
+  def create
+    @user = User.new(params[:user].permit(:name, :email, :password, :password_confirmation))ijjr
+    @user.save
     redirect_to '/'
   end
 

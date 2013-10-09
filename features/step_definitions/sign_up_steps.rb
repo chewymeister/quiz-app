@@ -15,11 +15,19 @@ Then(/^the number of users will equal "(.*?)"$/) do |number|
   expect(User.count).to eq number.to_i
 end
 
+When(/^the user signs up with no name and the email "(.*?)" and the password "(.*?)" with the password confirmation "(.*?)"$/) do |email, password, password_confirmation|
+  sign_up email, password, password_confirmation
+end
+
+Then(/^the number of users will not equal "(.*?)"$/) do |number|
+  expect(User.count).not_to eq number.to_i
+end
+
 def has_account? email
   !User.find_by_email(email).blank?
 end
 
-def sign_up name, email, password, password_confirmation
+def sign_up name='', email='', password='', password_confirmation=''
   # visit '/users/new'
   fill_in 'user[name]', with: name
   fill_in 'user[email]', with: email

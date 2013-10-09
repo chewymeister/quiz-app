@@ -4,7 +4,7 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 # require File.join(File.dirname(__FILE__), '..','..', 'app', 'bookmark_manager.rb')
-ENV['RACK_ENV'] = 'test'
+# ENV['RACK_ENV'] = 'test'
 
 require 'cucumber/rails'
 require 'database_cleaner'
