@@ -51,6 +51,13 @@ After do |scenario|
   DatabaseCleaner.clean
 end
 
+
+Before '@registered_user' do
+  User.create(name: 'test', 
+              email: 'test@test.com',
+              password: 'test', 
+              password_confirmation: 'test')
+end
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #

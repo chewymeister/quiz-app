@@ -8,6 +8,7 @@ QuizApp::Application.routes.draw do
   root 'quizzes#index'
   resources :quizzes
   resources :users
+  resources :sessions
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

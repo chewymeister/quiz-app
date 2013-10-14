@@ -6,12 +6,4 @@
   Password Confirmtion: <%= f.text_area :password_confirmation %><br />
   <%= f.submit "Sign Up" %>
 <% end %>
-<%= flash[:errors].inspect %>
-<% if !flash[:errors].nil? %>
-  Sorry, there were the following problems with the form:
-  <ul id="errors">
-    <% flash[:errors].each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+

@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if !flash[:errors].nil? %>
+    Sorry, there were the following problems with the form:
+    <ul id="errors">
+      <%= flash[:errors] %>
+    </ul>
+  <% end %>
 
-<%= yield %>
+  <% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>
