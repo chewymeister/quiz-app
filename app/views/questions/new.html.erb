@@ -1,4 +1,11 @@
-<% form_for @question do |f| %>
-  Question: <%= f.text_area :query, placeholder: 'Your question here' %>
-
-<% end %>
+<div id="new_question_form">
+  <%= form_for @question do |f| %>
+    Question: <%= f.text_area :query, placeholder: 'Your question here' %>
+    Option 1: <%= f.text_area :option1  %>
+    Option 2: <%= f.text_area :option2  %>
+    Option 3: <%= f.text_area :option3  %>
+    Option 4: <%= f.text_area :option4  %>
+    Answer:   <%= f.text_area :answer   %>
+    <%= f.submit "Create Question" %>
+  <% end %>
+</div>

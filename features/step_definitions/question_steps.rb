@@ -9,6 +9,10 @@ When(/^the user creates a question with "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*
   create_question query, option1, option2, option3, option4, answer
 end
 
-Then(/^the user should see the message "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^the user should see the message "(.*?)"$/) do |message|
+  expect(page).to have_content message
+end
+
+Then(/^the page should be "(.*?)"$/) do |path|
+  expect(current_path).to eq path
 end
