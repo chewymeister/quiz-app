@@ -1,4 +1,5 @@
 QuizApp::Application.routes.draw do
+  get "questions/new"
   get "users/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,7 +10,9 @@ QuizApp::Application.routes.draw do
   resources :quizzes
   resources :users
   resources :sessions
+  resources :questions
 
+  match '/new_question', to: 'questions#new', via: 'get'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
