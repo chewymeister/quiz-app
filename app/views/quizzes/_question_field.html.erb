@@ -1,0 +1,10 @@
+<%= f.fields_for :questions do |question_f| %>
+  <div class="new_questions">
+    Question: <%= question_f.text_field :query, placeholder: 'Your question here' %>
+    Option 1: <%= question_f.text_field :option1  %>
+    Option 2: <%= question_f.text_field :option2  %>
+    Option 3: <%= question_f.text_field :option3  %>
+    Option 4: <%= question_f.text_field :option4  %>
+    Answer:   <%= question_f.text_field :answer   %>
+  </div>
+<% end %>

@@ -1,5 +1,6 @@
 @registered_user
 Feature: User signs in
+
   Scenario: with the correct password
   Given the user has an account on the database with the email "test@test.com"
   When the user goes to the sign up page at "/sessions/new"

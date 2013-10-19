@@ -11,19 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016083301) do
+ActiveRecord::Schema.define(version: 20131017110547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "questions", force: true do |t|
-    t.string "query"
-    t.string "option1"
-    t.string "option2"
-    t.string "option3"
-    t.string "option4"
-    t.string "answer"
+    t.string  "query"
+    t.string  "option1"
+    t.string  "option2"
+    t.string  "option3"
+    t.string  "option4"
+    t.string  "answer"
+    t.integer "quiz_id"
   end
+
+  add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id", using: :btree
 
   create_table "quizzes", force: true do |t|
     t.string "title"

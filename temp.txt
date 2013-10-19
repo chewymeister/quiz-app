@@ -1,0 +1,28 @@
+<% @quiz.questions.each do |question| %>
+  <%= question.query %>
+  <button>
+    <%= question.option1 %>
+  </button>
+  <button>
+    <%= question.option2 %>
+  </button>
+  <button>
+    <%= question.option3 %>
+  </button>
+  <button>
+    <%= question.option4 %>
+  </button>
+<% end %>
+
+<%= form_tag quiz_attempts_path do %>
+  <% @quiz.questions.each do |question| %>
+    <h4><%= question.query %></h4>
+    <% question.answers.each do |answer| %>
+      <label>
+        <%= answer.response %>
+        <%= radio_button_tag "answer_ids[#{question.id}]", answer.id %>
+      </label>
+    <% end %>
+  <% end %>
+  <br><%= submit_tag "Submit" %>
+<% end %>

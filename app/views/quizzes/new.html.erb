@@ -1,0 +1,20 @@
+<div id="new_quiz_form">
+  <%= form_for @quiz do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= render 'question_field', f: f %>
+    <%= f.submit "Create Quiz" %>
+  <% end %>
+</div>
+
+
+<!-- = form_for @quiz do |f|
+  = f.label :title
+  = f.text_field :title, placeholder: 'Your title here'
+  = f.fields_for :questions do |question_f|
+    - question_no = question_f.index + 1
+    = question_f.label :text, "Question #{question_no}"
+    = question_f.text_field :text, placeholder: "Enter question #{question_no}"
+    = question_f.label :truth, "Answer #{question_no}"
+    = question_f.select :truth, options_for_select(%w(true false))
+  = f.submit -->

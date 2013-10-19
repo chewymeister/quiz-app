@@ -7,10 +7,12 @@ QuizApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   
   root 'quizzes#index'
-  resources :quizzes
+  resources :quizzes do 
+    # resources :questions
+    resources :attempts, only: [:new, :create, :show]
+  end
   resources :users
   resources :sessions
-  resources :questions
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
