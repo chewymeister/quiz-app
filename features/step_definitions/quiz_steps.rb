@@ -17,18 +17,11 @@ When(/^the user clicks on the link "(.*?)"$/) do |link|
 end
 
 Then(/^the user creates a quiz with title "(.*?)"$/) do |title|
-  # expect(page.current_path).to eq new_quiz_path
   fill_in 'quiz_title', with: title
 end
 
-Then(/^the user fills in the following questions:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  (data = table.raw).shift
-  data.flatten!
-  fill_in ''
-  # print "HELLO!!!: #{data.count}"
-  # print "HELLO!!!: #{page.all('.question-form').count}"
-  # expect(page.current_path).to eq root_path
+Then(/^the user fills in the query with "(.*?)", option one "(.*?)", option two "(.*?)", option three, "(.*?)", option four "(.*?)", answer "(.*?)"$/) do |query, option1, option2, option3, option4, answer|
+
 end
 
 Then(/^the user clicks "(.*?)" button$/) do |arg1|

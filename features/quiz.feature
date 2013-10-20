@@ -7,14 +7,8 @@ Feature: User generates a new quiz
   Scenario: User clicks on create a new quiz link
   When the user clicks on the link "Create New Quiz"
   Then the user creates a quiz with title "Capital Cities"
-  Then the user fills in the following questions:
-
-  |query               | option1 | option2 | option3 | option4 | answer  |
-  |Capital of England? | London  | Paris   | Berlin  | Beijing | London  |
-  |Capital of France?  | Paris   | Berlin  | London  | Beijing | Paris   |
-  |Capital of Germany? | Berlin  | London  | Beijing | Paris   | Berlin  |
-  |Capital of China?   | Beijing | Paris   | London  | Berlin  | Beijing |
+  Then the user fills in the query with "What is the capital of England?", option one "London", option two "Paris", option three, "Berlin", option four "Beijing", answer "London"
   Then the user clicks "Create Quiz" button
-  Then the user sees the message "Your quiz was saved"
+  And the user sees the message "Your quiz was saved"
 
 
