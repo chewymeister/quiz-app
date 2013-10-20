@@ -13,9 +13,5 @@ Feature: A question will be created that has a query and has an answer
       | What is the capital of France?  | Berlin   | Paris   | Beijing | London  | Paris  |
       | What is the capital of Germany? | London   | Berlin  | Paris   | Beijing | Berlin |
 
-  # Scenario: User creates a question for a quiz
-  #   Given the user selects the quiz "Some Quiz"
-  #   When the user click the "Create Question" link
-  #   Then the user will create a question with "<query>", "<option1>", "<option2>", "<option3>", "<option4>", "<answer>"
 
   

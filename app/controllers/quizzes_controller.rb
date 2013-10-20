@@ -11,11 +11,13 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    @quiz = Quiz.create(params[:quiz].permit(:id, :title, questions_attributes: [:id, :query, :option1, :option2, :option3, :option4, :answer]))
+    @quiz = Quiz.create(params[:quiz].permit(:id, :title, 
+      questions_attributes: [:id, :query, :option1, :option2, :option3, 
+                             :option4, :answer]))
 
     if @quiz.save
       flash[:notice] = "Your quiz was saved"
-      redirect_to '/'
+      redirect_to root_path
     else
       render 'new'
     end
