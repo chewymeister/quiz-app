@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params[:user].permit(:name, :email, :password, :password_confirmation))
     if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "You are now signed up #{@user.name}! Play a quiz!"
       redirect_to '/'
     else
       flash[:errors] = @user.errors.values

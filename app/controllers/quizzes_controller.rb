@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  helper QuizzesHelper
 
   def index
     @quizzes = Quiz.all
@@ -7,7 +8,6 @@ class QuizzesController < ApplicationController
   def new
     @quiz = Quiz.new
     4.times { @quiz.questions.build }
-    # @quiz.populate(num_of_questions: 5)
   end
 
   def create
@@ -22,7 +22,17 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @quiz = Quiz.find(params[:id])
+    if current_user
+      @quiz = Quiz.find(params[:id])
+    else
+      flash[:notice] = "You must be signed in to play"
+      redirect_to new_session_path
+    end
   end
   
+  private
+
+  def current_user
+    @current_user ||=User.find(session[:user_id]) if session[:user_id]
+  end
 end

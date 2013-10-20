@@ -1,5 +1,10 @@
+
 <% @quizzes.each do |quiz| %>
-  <%= link_to quiz.title, quiz_path(quiz) %>
+  <ul id="quiz-list">
+    <li class="quit-item">
+      <%= link_to quiz.title, quiz_path(quiz) %>
+    </li>
+  </ul>
 <% end %>
 
 <%= link_to "Create New Quiz", new_quiz_path(@quiz) %>

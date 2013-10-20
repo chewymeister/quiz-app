@@ -1,4 +1,5 @@
 class AttemptsController < ApplicationController
+
   def new
     @quiz = Quiz.find params[:quiz_id]
   end
@@ -10,4 +11,5 @@ class AttemptsController < ApplicationController
     flash[:notice] = "#{@score}"
     redirect_to '/'
   end
+  
 end

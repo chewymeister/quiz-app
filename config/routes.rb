@@ -8,11 +8,13 @@ QuizApp::Application.routes.draw do
   
   root 'quizzes#index'
   resources :quizzes do 
-    # resources :questions
     resources :attempts, only: [:new, :create, :show]
   end
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/sign_out', to: 'sessions#destroy', via: 'delete'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
