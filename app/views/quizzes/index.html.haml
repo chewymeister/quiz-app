@@ -1,0 +1,6 @@
+- @quizzes.each do |quiz|
+  %ul#quiz-list 
+    %li.quiz-item 
+      = link_to quiz.title, quiz_path(quiz)
+
+=  link_to "Create New Quiz", new_quiz_path(@quiz)

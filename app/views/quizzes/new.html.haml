@@ -1,0 +1,6 @@
+#new_quiz_form 
+  = form_for @quiz do |f|
+    = f.label :title
+    = f.text_field :title
+    = render 'question_field', f: f
+    = f.submit 'Create Quiz'
