@@ -1,0 +1,15 @@
+= form_for :sessions, :url => { :action => 'create' } do |f|
+  .email-field 
+    = f.label :email
+    = f.text_field :email
+  .password-field
+    = f.label :password
+    = f.text_field :password, type: :password
+  = f.submit "Sign In"
+
+
+/   <%= form_for :sessions, :url => { :action => 'create' } do |f| %>  
+/   Email: <%= f.text_area :email %><br />  
+/   Password: <%= f.text_area :password, value: '' %><br />  
+/   <%= f.submit "Sign In" %>
+/ <% end %>

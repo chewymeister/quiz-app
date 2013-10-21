@@ -1,0 +1,38 @@
+= @quiz.title
+
+- @quiz.questions.each do |question|
+  %li 
+    = question.query
+  %li 
+    = question.option1
+  %li 
+    = question.option2
+  %li 
+    = question.option3
+  %li 
+    = question.option4
+
+= button_to 'Play Quiz', new_quiz_attempt_path(@quiz), method: :get
+
+/ <%= @quiz.title %>
+
+/ <% @quiz.questions.each do |question| %>
+/   <li>
+/     <%= question.query %>
+/   </li>
+/   <li>
+/     <%= question.option1 %>
+/   </li>
+/   <li>
+/     <%= question.option2 %>
+/   </li>
+/   <li>
+/     <%= question.option3 %>
+/   </li>
+/   <li>
+/     <%= question.option4 %>
+/   </li>
+
+/ <% end %>
+
+/ <%= button_to 'Play Quiz', new_quiz_attempt_path(@quiz), method: :get%>
