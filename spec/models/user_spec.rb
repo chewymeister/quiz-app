@@ -46,7 +46,7 @@ describe User do
     user.password = 'abc'
     user.password_confirmation = 'abc'
     expect(user).to_not be_valid
-    expect(user.errors.values.flatten).to include("you must fill in all required fields")
+    expect(user.errors.values.flatten).to include("you must fill in your name")
   end
 
 end

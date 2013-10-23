@@ -28,7 +28,7 @@ Then(/^the user clicks "(.*?)" button$/) do |arg1|
   click_button 'Create Quiz'
 end
 
-Then(/^the user sees the message "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^the user sees the message "(.*?)"$/) do |message|
+  expect(page).to have_content message
 end
 

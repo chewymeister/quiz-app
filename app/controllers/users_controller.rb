@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:notice] = "You are now signed up #{@user.name}! Play a quiz!"
       redirect_to '/'
     else
-      flash[:errors] = @user.errors.values
+      flash[:errors] = @user.errors.full_messages
       redirect_to '/users/new'
     end
   end

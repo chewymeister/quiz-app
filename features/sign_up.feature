@@ -10,7 +10,7 @@ Feature: User signs up for an account
   When the user goes to the sign up page at "/users/new"
   When the user signs up with no name and the email "test@test.com" and the password "test" with the password confirmation "test"
   Then the number of users will not equal "1"
-  And sees the message "you must fill in all required fields"
+  And sees the message "you must fill in your name"
 
   Scenario: When the user tries to sign up with passwords that don't match
   When the user goes to the sign up page at "/users/new"

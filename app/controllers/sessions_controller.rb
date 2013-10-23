@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome #{@user.name}! Please choose a quiz to play."
       redirect_to '/quizzes'
     else
-      flash[:errors] = 'Your email or your password did not match. Please try again'
+      flash[:errors] = ["Your email or your password did not match. Please try again"]
       redirect_to '/sessions/new'
     end
   end

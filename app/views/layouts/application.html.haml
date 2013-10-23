@@ -6,7 +6,7 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %nav 
+    %nav
       %a{:href => root_path}
         %h1 Welcome to QuizApp!!
       = link_to "Sign In", new_session_path
@@ -14,7 +14,9 @@
       = link_to "Sign Out", sign_out_path, method:'delete'
     - if flash[:errors]
       %p Sorry, there were the following problems with the form:
-      %ul#errors= flash[:errors]
+      %ul#errors
+        - flash[:errors].each do |error|
+          %li= error
     - if flash[:notice]
       #notice= flash[:notice]
     = yield

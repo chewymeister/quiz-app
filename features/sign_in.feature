@@ -14,3 +14,9 @@ Feature: User signs in
   Then the user will reach the sign in page again"/sessions/new"
   And the user see the message "Your email or your password did not match. Please try again"
 
+  Scenario: with the incorrect email
+  Given the user has an account on the database with the email "test@test.com"
+  When the user signs in with the email "wrong@test.com" and the incorrect password "test"
+  Then the user will reach the sign in page again"/sessions/new"
+  And the user see the message "Your email or your password did not match. Please try again"  
+
