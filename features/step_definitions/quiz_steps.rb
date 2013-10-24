@@ -21,7 +21,7 @@ Then(/^the user creates a quiz with title "(.*?)"$/) do |title|
 end
 
 Then(/^the user fills in the query with "(.*?)", option one "(.*?)", option two "(.*?)", option three, "(.*?)", option four "(.*?)", answer "(.*?)"$/) do |query, option1, option2, option3, option4, answer|
-  
+  fill_in('Question 1', with: query)
 end
 
 Then(/^the user clicks "(.*?)" button$/) do |arg1|

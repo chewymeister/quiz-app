@@ -1,14 +1,15 @@
 = f.fields_for :questions do |question_f|
   .new_questions 
-    = question_f.label :query
+    - n += 1
+    = question_f.label :query, "Question #{n}"
     = question_f.text_field :query, placeholder: 'Your question here'
-    = question_f.label :option1
+    = question_f.label :option1, 'Option 1'
     = question_f.text_field :option1
-    = question_f.label :option2
+    = question_f.label :option2, 'Option 2'
     = question_f.text_field :option2
-    = question_f.label :option3
+    = question_f.label :option3, 'Option 3'
     = question_f.text_field :option3
-    = question_f.label :option4
+    = question_f.label :option4, 'Option 4'
     = question_f.text_field :option4
     = question_f.label :answer
     = question_f.text_field :answer
